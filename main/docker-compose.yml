@@ -1,0 +1,18 @@
+services:
+  servidor-bd:
+    image: crate
+    ports:
+      - 4200:4200
+    command: ["crate",
+              "-Cdiscovery.type=single-node"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4200"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+  cliente-crate:
+    build: .
+    network_mode: "host"
+    depends_on:
+      servidor-bd:
+        condition: service_healthy

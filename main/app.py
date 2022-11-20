@@ -27,6 +27,6 @@ while True:
         name = input("Escribe el nombre de la entrada que quieres consultar: ")
         cursor.execute("SELECT * FROM people WHERE name = ?", (name,))
         res = cursor.fetchone()
-        print(res + "\n")
+        print(str(res) + "\n")
     elif option == "4":
         exit(0)
