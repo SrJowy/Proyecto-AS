@@ -1,10 +1,10 @@
 # Fdb version 3
-["xdvipdfmx"] 1668447282 "index.xdv" "index.pdf" "index" 1668447283
-  "index.xdv" 1668447282 2928 78fbd1903782363a24ac6d923aafb615 "xelatex"
+["xdvipdfmx"] 1669052389 "index.xdv" "index.pdf" "index" 1669052390
+  "index.xdv" 1669052389 9740 dfb1a46565742fe26e00d2139a9693c2 "xelatex"
   (generated)
   "index.pdf"
-["xelatex"] 1668447282 "/home/joel/ADMON/Proyecto/documentacion/index.tex" "index.xdv" "index" 1668447283
-  "/home/joel/ADMON/Proyecto/documentacion/index.tex" 1668447281 394 f1d43ac2e23b95ae6471b4602bec8d9c ""
+["xelatex"] 1669052389 "/home/joel/ADMON/Proyecto/documentacion/index.tex" "index.xdv" "index" 1669052390
+  "/home/joel/ADMON/Proyecto/documentacion/index.tex" 1669052389 1059 c665aff23da7543aecf0d71b216c6afe ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -61,9 +61,9 @@
   "/usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
   "/usr/local/texlive/2022/texmf-var/web2c/xetex/xelatex.fmt" 1654460905 4407157 51e7dfe7e2d3633cde301b7f5291ac9b ""
   "/usr/local/texlive/2022/texmf.cnf" 1654460862 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "index.aux" 1668447282 629 2bc1e9af3a4215b5ed3a5e341ea3a88c "xelatex"
-  "index.out" 1668447282 103 9814c2d956916adb9290eca4e25c967a "xelatex"
-  "index.tex" 1668447281 394 f1d43ac2e23b95ae6471b4602bec8d9c ""
+  "index.aux" 1669052389 851 0602a0245fd4b5c189e9fae8bf0b36b9 "xelatex"
+  "index.out" 1669052389 294 ee228a493d8df1b9802857d2fdad8270 "xelatex"
+  "index.tex" 1669052389 1059 c665aff23da7543aecf0d71b216c6afe ""
   (generated)
   "index.aux"
   "index.log"
