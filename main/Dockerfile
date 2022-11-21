@@ -4,6 +4,8 @@ RUN apt -qq update
 RUN apt -y -qq install python3
 RUN apt -y -qq install python3-pip
 RUN pip3 -qq install crate
+RUN pip3 -qq install flask
+RUN pip3 -qq install flask_cors
 RUN mkdir /cliente
 
 COPY ./app.py /cliente/app.py

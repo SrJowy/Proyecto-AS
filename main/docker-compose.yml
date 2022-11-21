@@ -5,14 +5,17 @@ services:
       - 4200:4200
     command: ["crate",
               "-Cdiscovery.type=single-node"]
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:4200"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
   cliente-crate:
     build: .
-    network_mode: "host"
-    depends_on:
-      servidor-bd:
-        condition: service_healthy
+    ports:
+      - 4201:4201
+    links:
+      - servidor-bd
+  web:
+    image: httpd
+    volumes:
+      - ./public:/usr/local/apache2/htdocs
+    ports:
+      - 8080:80
+    links:
+      - cliente-crate
