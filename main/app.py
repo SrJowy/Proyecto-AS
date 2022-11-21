@@ -11,6 +11,13 @@ def retrieve_data():
     response = jsonify({'mError':'error'})
     return response
 
+@app.route('/newentry', methods=['POST'])
+def new_entry():
+    name = request.form['name']
+    task = request.form['task']
+    date = request.form['date']
+    return str(name) + str(task) + str(date)
+
 app.run(host='0.0.0.0', port=4201)
 
 
