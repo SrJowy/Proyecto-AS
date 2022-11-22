@@ -1,6 +1,6 @@
 const retrieveData = () => {
     const xmlHttp = new XMLHttpRequest();
-    const url ='http://localhost:4201/retrievedata';
+    const url ='http://localhost:10.5.0.5/retrievedata';
     xmlHttp.open("GET", url);
 
     xmlHttp.send();
@@ -31,7 +31,7 @@ const newEntry = () => {
 
     if (name != "" && task != "" && date != "") {
         const request = new XMLHttpRequest();
-        const url = 'http://localhost:4201/newentry';
+        const url = 'http://10.5.0.5:4201/newentry';
         request.open("POST", url, true);
         request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 

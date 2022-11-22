@@ -1,15 +1,24 @@
+name: deployment
 services:
   servidor-bd:
     image: crate
     ports:
       - 4200:4200
     command: ["crate",
-              "-Cdiscovery.type=single-node"]
+              "-Cdiscovery.type=single-node",
+              "-Cnetwork.host=_site_"]
+    hostname: crate-db
+    networks:
+      my-network:
+        ipv4_address: 10.5.0.4
   cliente-crate:
     build: .
     ports:
       - 4201:4201
-    links:
+    networks:
+      my-network:
+        ipv4_address: 10.5.0.5
+    depends_on:
       - servidor-bd
   web:
     image: httpd
@@ -17,5 +26,15 @@ services:
       - ./public:/usr/local/apache2/htdocs
     ports:
       - 8080:80
-    links:
+    networks:
+      my-network:
+        ipv4_address: 10.5.0.6
+    depends_on:
       - cliente-crate
+networks:
+  my-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1

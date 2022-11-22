@@ -7,7 +7,7 @@ CORS(app)
 
 @app.route('/retrievedata',methods=['GET'])
 def retrieve_data():
-    connection = client.connect("http://172.20.0.2:4200/", username="crate")
+    connection = client.connect("http://10.5.0.4:4200/", username="crate")
     if connection:
         cursor = connection.cursor()
         cursor.execute("select table_name from information_schema.tables WHERE table_name = 'tasks' limit 100")
@@ -29,7 +29,7 @@ def new_entry():
     task = request.form['task']
     date = request.form['date']
 
-    connection = client.connect("http://172.20.0.2:4200/", username="crate")
+    connection = client.connect("http://10.5.0.4:4200/", username="crate")
     cursor = connection.cursor()
     cursor.execute("""INSERT INTO "doc"."tasks" (name, task, date) 
                    VALUES (?, ?, ?)""",(name, task, date))
