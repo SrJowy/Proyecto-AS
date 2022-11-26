@@ -1,6 +1,6 @@
 const retrieveData = () => {
     const xmlHttp = new XMLHttpRequest();
-    const url ='http://localhost:10.5.0.5/retrievedata';
+    const url ='http://10.5.0.5:4201/retrievedata';
     xmlHttp.open("GET", url);
 
     xmlHttp.send();

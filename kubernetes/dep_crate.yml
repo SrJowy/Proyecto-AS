@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mi-crate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: crate
+    template:
+      metadata:
+        labels:
+          component: crate
+      spec:
+        containers:
+          - name: mi-crate-pod
+            image: crate
+            command: ["/bin/sh"]
+            args: ["crate", "-Cdiscovery.type=single-node", "-Cnetwork.host=_site_"]
+            ports:
+              - containerPort: 4200

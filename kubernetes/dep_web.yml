@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-cliente
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    sepc:
+      volumes:
+        - name: almacenamiento-web
+          persistentVolumeClaim:
+            claimName: data-volume-vp
+      containers:
+        - name: cliente-web
+          image: httpd
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: almacenamiento-web
+              mountPath: /web
+              subPath: datos-web
