@@ -1,3 +1,4 @@
+name: deployment
 services:
   servidor-bd:
     image: crate
