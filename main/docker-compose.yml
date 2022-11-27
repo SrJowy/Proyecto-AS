@@ -1,9 +1,10 @@
-name: deployment
 services:
   servidor-bd:
     image: crate
     ports:
       - 4200:4200
+    volumes:
+      - ./db:/db-data
     command: ["crate",
               "-Cdiscovery.type=single-node",
               "-Cnetwork.host=_site_"]
@@ -38,3 +39,5 @@ networks:
       config:
         - subnet: 10.5.0.0/16
           gateway: 10.5.0.1
+volumes:
+  db-data:

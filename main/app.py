@@ -1,6 +1,7 @@
 from crate import client
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -14,9 +15,12 @@ def retrieve_data():
         exists = cursor.fetchone()
         if (not exists):
             cursor.execute("""CREATE TABLE tasks (name text, task text, date text)""")
+            cursor.execute("COPY tasks FROM 'file:///db-data/tasks_1_.json'")
+            cursor.execute("COPY tasks FROM 'file:///db-data/tasks_2_.json'")
+            time.sleep(1)
         cursor.execute("SELECT * FROM tasks")
         tasks = cursor.fetchall()
-    connection.close()
+        connection.close()
     retorno = {"lTareas": []}
     for t in tasks:
         retorno["lTareas"].append({"name": t[0], "task": t[1], "date": t[2]})
