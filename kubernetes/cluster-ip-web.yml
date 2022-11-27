@@ -5,6 +5,7 @@ metadata:
 
 spec:
   type: ClusterIP
+  clusterIP: 10.5.0.6
   selector:
     component: web
   ports:
