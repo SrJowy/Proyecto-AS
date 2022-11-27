@@ -11,4 +11,4 @@ spec:
     requests:
       storage: 5Gi
   hostPath:
-    path: "../main/public/"
+    path: "../main/db/"

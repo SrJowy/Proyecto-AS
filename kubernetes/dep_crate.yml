@@ -12,6 +12,10 @@ spec:
         labels:
           component: crate
       spec:
+        volumes:
+          - name: almacenamiento-bd
+            persistentVolumeClaim:
+              claimName: data-crate-vp
         containers:
           - name: mi-crate-pod
             image: crate
@@ -19,3 +23,6 @@ spec:
             args: ["crate", "-Cdiscovery.type=single-node", "-Cnetwork.host=_site_"]
             ports:
               - containerPort: 4200
+            volumeMounts:
+              - name: almacenamiento-bd
+                mountPath: /db-data
