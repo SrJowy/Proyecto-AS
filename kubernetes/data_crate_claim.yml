@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+
+metadata:
+  name: data-crate-vp
+
+spec:
+  storageClassName: crate-vol
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi

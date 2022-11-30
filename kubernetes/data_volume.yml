@@ -1,14 +1,14 @@
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 
 metadata:
-  name: data-volume-vp
+  name: data-volume-vps
 
 spec:
-  accessMode:
+  storageClassName: vol
+  accessModes:
     - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
+  capacity:
+    storage: 5Gi
   hostPath:
-    path: "../main/public/"
+    path: "/home/joel/as/Proyecto/kubernetes/main/public/"

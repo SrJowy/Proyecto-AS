@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.5)  27 NOV 2022 15:27
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.5)  30 NOV 2022 19:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/joel/ADMON/Proyecto/documentacion/index.tex
-(/home/joel/ADMON/Proyecto/documentacion/index.tex
+**/home/joel/as/Proyecto/documentacion/index.tex
+(/home/joel/as/Proyecto/documentacion/index.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-06-02> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -287,17 +287,17 @@ Package hyperref Info: Link coloring OFF on input line 19.
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 80.
- [2] [3] [4] [5] [6] [7] (./index.aux)
+ [2] [3] [4] [5] [6] [7] [8] (./index.aux)
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 6C0DD87EE1146E35FF10289B33ED6742;667.
+(rerunfilecheck)             Checksum: 5935B37AAA332EA3052260BB9BCEB158;729.
  ) 
 Here is how much of TeX's memory you used:
- 10450 strings out of 477451
- 163643 string characters out of 5834790
- 685350 words of memory out of 5000000
- 31062 multiletter control sequences out of 15000+600000
+ 10451 strings out of 477451
+ 163645 string characters out of 5834790
+ 685353 words of memory out of 5000000
+ 31063 multiletter control sequences out of 15000+600000
  474465 words of font info for 55 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
- 72i,6n,76p,559b,1850s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,6n,76p,556b,1850s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on index.xdv (7 pages, 115108 bytes).
+Output written on index.xdv (8 pages, 127820 bytes).

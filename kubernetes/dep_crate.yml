@@ -7,22 +7,32 @@ spec:
   selector:
     matchLabels:
       component: crate
-    template:
-      metadata:
-        labels:
-          component: crate
-      spec:
-        volumes:
-          - name: almacenamiento-bd
-            persistentVolumeClaim:
-              claimName: data-crate-vp
-        containers:
-          - name: mi-crate-pod
-            image: crate
-            command: ["/bin/sh"]
-            args: ["crate", "-Cdiscovery.type=single-node", "-Cnetwork.host=_site_"]
-            ports:
-              - containerPort: 4200
-            volumeMounts:
-              - name: almacenamiento-bd
-                mountPath: /db-data
+  template:
+    metadata:
+      labels:
+        component: crate
+    spec:
+      volumes:
+        - name: almacenamiento-bd
+          persistentVolumeClaim:
+            claimName: data-crate-vp
+      initContainers:
+        - name: init-sysctl
+          image: busybox
+          imagePullPolicy: IfNotPresent
+          command: ["sysctl", "-w", "vm.max_map_count=262144"]
+          securityContext:
+            privileged: true
+      containers:
+        - name: mi-crate-pod
+          image: crate
+          command:
+            - /docker-entrypoint.sh
+            - -Cnode.name="node"
+            - -Ccluster.name="cluster"
+            - -Ccluster.initial_master_nodes=crate-0
+          ports:
+            - containerPort: 4200
+          volumeMounts:
+            - name: almacenamiento-bd
+              mountPath: /db-data

@@ -5,7 +5,7 @@ metadata:
 
 spec:
   type: ClusterIP
-  clusterIP: 10.5.0.4
+  clusterIP: 10.96.0.4
   selector:
     component: crate
   ports:

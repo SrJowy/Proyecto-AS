@@ -1,14 +1,14 @@
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 
 metadata:
-  name: data-crate-vp
+  name: data-crate-vps
 
 spec:
-  accessMode:
+  storageClassName: crate-vol
+  accessModes:
     - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
+  capacity:
+    storage: 5Gi
   hostPath:
-    path: "../main/db/"
+    path: "/home/joel/as/Proyecto/main/db/"

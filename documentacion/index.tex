@@ -255,8 +255,26 @@ Para realizar la implementación de Kubernetes debemos tener en cuenta los objet
 para que la aplicación se ejecute de la misma forma que lo hace con el archivo docker-compose
 pero con los beneficios de utilizar Kubernetes. Para cada aplicación hemos creado un objeto
 deployment, con su determinado cluster-ip para que cada contenedor sea visible dentro del cluster
-y para los contenedores que necesitan persistencia, persistentVolumeClaims.
+y para los contenedores que necesitan persistencia, persistentVolumeClaims. Finalmente, para la 
+conexión con el exterior, hemos creado un objeto de tipo ingress.
 
-Finalmente, para la conexión con el exterior, hemos creado un objeto de tipo ingress.
+Para probar el cluster con todos los objetos se ha utilizado Minikube, que es una manera muy sencilla
+y rápida para desarrollo de kubernetes.
 
+\subsection[1]{Descripción de los objetos kubernetes}
+\begin{itemize}
+  \item dep\_crate: es el objeto deployment que despliega un pod con la imagen de kubernetes. En este 
+        caso, al contar CrateDB con la función de crear nodos independientes, la función de réplica resulta muy útil.
+        Además, cuenta con la persistencia que le otorga el persistentVolumeClaim data-crate-vp.
+  \item dep\_backend: es el objeto deployment que despliega la imagen que se encuentra en docker-hub.
+        Se pone en marcha y se queda esperando a que le lleguen peticiones.
+  \item dep\_web: es el objeto deployment que se encarga de desplegar la imagen httpd. Cuenta con persistencia
+        mediante el volumen data-volume-vp. 
+  \item cluster-ip-crate: Otorga una ip dentro del clúster y abre el puerto 4200.
+  \item cluster-ip-backend: Otorga una ip dentro del clúster y abre el puerto 4201.
+  \item cluster-ip-web: Otorga una ip dentro del clúster y abrimos el puerto 8080 que redirige el tráfico
+        al puerto 80.
+  \item ingress: es el objeto ingress que permite que podamos acceder al interior del cluster. En este caso,
+        únicamente nos interesa dar acceso al puerto 8080 que es el puerto abierto para httpd.
+\end{itemize}
 \end{document}
